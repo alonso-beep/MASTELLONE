@@ -1,554 +1,664 @@
-!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mastellone | Ropa y Calzado</title>
+  <title>Mastellone | Ropa y Calzado</title>
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
 
-html {
-  scroll-behavior: smooth;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4ef;
-  color: #111;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* HEADER */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4ef;
+      color: #111;
+    }
 
-header {
-  background: #101410;
-  color: white;
-  padding: 22px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
+    /* HEADER */
 
-.logo {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 4px;
-}
-nav {
-  display: flex;
-  gap: 25px;
-}
+    header {
+      background: #101410;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: 0.3s ease;
-}
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
 
-nav a:hover {
-  color: #b8d8c0;
-}.eagle {
-  font-size: 35px;
-  transition: transform 0.3s ease;
-}
+    nav {
+      display: flex;
+      gap: 25px;
+    }
 
-.eagle:hover {
-  transform: scale(1.2) rotate(-5deg);
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+    }
 
-/* HERO */
+    nav a:hover {
+      color: #b8d8c0;
+    }
 
-.hero {
-  min-height: 75vh;
-  background: #123d2a;
-  color: white;
-  padding: 80px 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
+    .eagle {
+      font-size: 35px;
+      transition: transform 0.3s ease;
+    }
 
-.hero h1 {
-  font-size: 80px;
-  letter-spacing: 5px;
-  animation: aparecer 1s ease;
-}
+    .eagle:hover {
+      transform: scale(1.2) rotate(-5deg);
+    }
 
-.hero p {
-  font-size: 20px;
-  max-width: 600px;
-  margin-top: 20px;
-  line-height: 1.5;
-  animation: aparecer 1.3s ease;
-}
+    /* HERO */
 
-.button {
-  display: inline-block;
-  width: fit-content;
-  margin-top: 30px;
-  padding: 15px 25px;
-  background: white;
-  color: #123d2a;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: 0.3s ease;
-  animation: aparecer 1.5s ease;
-}
+    .hero {
+      min-height: 75vh;
+      background: #123d2a;
+      color: white;
+      padding: 80px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-.button:hover {
-  transform: translateY(-4px);
-  background: #e5e6e0;
-}
+    .hero h1 {
+      font-size: 80px;
+      letter-spacing: 5px;
+      animation: aparecer 1s ease;
+    }
 
-/* SECCIONES */
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-top: 20px;
+      line-height: 1.5;
+      animation: aparecer 1.3s ease;
+    }
 
-section {
-  padding: 80px 8%;
-}
+    .button {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 30px;
+      padding: 15px 25px;
+      background: white;
+      color: #123d2a;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      animation: aparecer 1.5s ease;
+    }
 
-.title {
-  font-size: 40px;
-  margin-bottom: 35px;
-  letter-spacing: 2px;
-}
+    .button:hover {
+      transform: translateY(-4px);
+      background: #e5e6e0;
+    }
 
-/* PRODUCTOS */
+    /* SECCIONES */
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
+    section {
+      padding: 80px 8%;
+    }
 
-.product {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .title {
+      font-size: 40px;
+      margin-bottom: 35px;
+      letter-spacing: 2px;
+    }
 
-.product:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
+    /* PRODUCTOS */
 
-.product-image {
-  height: 300px;
-  background: #e5e6e0;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 80px;
-  transition: transform 0.3s ease;
-}
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
 
-.product:hover .product-image {
-  transform: scale(1.03);
-}
+    .product {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.product h3 {
-  margin-top: 18px;
-  font-size: 22px;
-}
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
 
-.product p {
-  margin-top: 8px;
-  color: #666;
-}
+    .product-image {
+      height: 300px;
+      background: #e5e6e0;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 80px;
+      transition: transform 0.3s ease;
+    }
 
-.price {
-  margin-top: 15px;
-  font-size: 21px;
-  font-weight: bold;
-  color: #123d2a;
-}
+    .product:hover .product-image {
+      transform: scale(1.03);
+    }
 
-.product-button {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 12px 18px;
-  background: #101410;
-  color: white;
-  text-decoration: none;
-  border-radius: 7px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
+    .product h3 {
+      margin-top: 18px;
+      font-size: 22px;
+    }
 
-.product-button:hover {
-  background: #123d2a;
-  transform: translateY(-2px);
-}
+    .product p {
+      margin-top: 8px;
+      color: #666;
+      line-height: 1.4;
+    }
 
-/* HISTORIA */
+    .price {
+      margin-top: 15px;
+      font-size: 21px;
+      font-weight: bold;
+      color: #123d2a;
+    }
 
-.about {
-  background: #101410;
-  color: white;
-}
+    .product-button {
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: #101410;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
 
-.about p {
-  max-width: 700px;
-  font-size: 19px;
-  line-height: 1.7;
-}
+    .product-button:hover {
+      background: #123d2a;
+      transform: translateY(-2px);
+    }
 
-/* FOOTER */
+    /* HISTORIA */
 
-footer {
-  background: #123d2a;
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
+    .about {
+      background: #101410;
+      color: white;
+    }
 
-/* ANIMACIÓN */
+    .about p {
+      max-width: 700px;
+      font-size: 19px;
+      line-height: 1.7;
+    }
 
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
+    /* CONTACTO */
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .contact-info {
+      margin-top: 20px;
+    }
 
-/* CELULAR */
+    .contact-info p {
+      margin-top: 10px;
+    }
 
-@media (max-width: 800px) {
+    /* FOOTER */
 
-  .products {
-    grid-template-columns: 1fr;
-  }
+    footer {
+      background: #123d2a;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
 
-  .hero {
-    min-height: 70vh;
-    padding: 60px 8%;
-  }
+    /* ANIMACIÓN */
 
-  .hero h1 {
-    font-size: 50px;
-  }
+    @keyframes aparecer {
 
-  .hero p {
-    font-size: 18px;
-  }
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
 
-  .title {
-    font-size: 32px;
-  }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  .product-image {
-    height: 250px;
-  }
-}
-</style>
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 800px) {
+
+      header {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding: 60px 8%;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .title {
+        font-size: 32px;
+      }
+
+      .product-image {
+        height: 250px;
+      }
+
+    }
+
+    /* BIENVENIDA */
+
+    #welcome-screen {
+      position: fixed;
+      inset: 0;
+      background: rgba(16, 20, 16, 0.96);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: welcomeOut 1s ease 3s forwards;
+    }
+
+    .welcome-box {
+      text-align: center;
+      animation: welcomeIn 0.8s ease;
+    }
+
+    .welcome-eagle {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    .welcome-box h2 {
+      font-size: 32px;
+      letter-spacing: 3px;
+    }
+
+    .welcome-box p {
+      margin-top: 12px;
+      color: #d5d5d5;
+    }
+
+    @keyframes welcomeIn {
+
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+    }
+
+    @keyframes welcomeOut {
+
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+    }
+
+    /* CONFETI */
+
+    .confetti {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 18px;
+      z-index: 10000;
+      pointer-events: none;
+      animation: caer linear forwards;
+    }
+
+    @keyframes caer {
+
+      to {
+        transform: translateY(110vh) rotate(720deg);
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-<header>
+  <!-- HEADER -->
 
-  <div class="logo">
-    MASTELLONE
+  <header>
+
+    <div class="logo">
+      MASTELLONE
+    </div>
+
+    <nav>
+      <a href="#inicio">INICIO</a>
+      <a href="#coleccion">COLECCIÓN</a>
+      <a href="#historia">HISTORIA</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+
+    <div class="eagle">
+      🦅
+    </div>
+
+  </header>
+
+
+  <!-- INICIO -->
+
+  <section class="hero" id="inicio">
+
+    <h1>MASTELLONE</h1>
+
+    <p>
+      Ropa y calzado creados para representar
+      fuerza, libertad y un estilo diferente.
+    </p>
+
+    <a href="#coleccion" class="button">
+      VER COLECCIÓN
+    </a>
+
+  </section>
+
+
+  <!-- COLECCIÓN -->
+
+  <section id="coleccion">
+
+    <h2 class="title">
+      COLECCIÓN
+    </h2>
+
+    <div class="products">
+
+
+      <!-- PRODUCTO 1 -->
+
+      <div class="product">
+
+        <div class="product-image">
+          👕
+        </div>
+
+        <h3>
+          Mastellone Alpha
+        </h3>
+
+        <p>
+          Remera urbana con un diseño moderno
+          inspirado en la identidad de Mastellone.
+        </p>
+
+        <div class="price">
+          $35
+        </div>
+
+        <button
+          class="product-button"
+          onclick="alert('Mastellone Alpha — Remera urbana — $35')">
+          VER PRODUCTO
+        </button>
+
+      </div>
+
+
+      <!-- PRODUCTO 2 -->
+
+      <div class="product">
+
+        <div class="product-image">
+          👟
+        </div>
+
+        <h3>
+          Mastellone Eagle
+        </h3>
+
+        <p>
+          Zapatillas deportivas pensadas para
+          combinar comodidad y estilo.
+        </p>
+
+        <div class="price">
+          $80
+        </div>
+
+        <button
+          class="product-button"
+          onclick="alert('Mastellone Eagle — Zapatillas deportivas — $80')">
+          VER PRODUCTO
+        </button>
+
+      </div>
+
+
+      <!-- PRODUCTO 3 -->
+
+      <div class="product">
+
+        <div class="product-image">
+          🧥
+        </div>
+
+        <h3>
+          Mastellone Black
+        </h3>
+
+        <p>
+          Campera urbana de estilo minimalista
+          para completar cualquier outfit.
+        </p>
+
+        <div class="price">
+          $95
+        </div>
+
+        <button
+          class="product-button"
+          onclick="alert('Mastellone Black — Campera urbana — $95')">
+          VER PRODUCTO
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- HISTORIA -->
+
+  <section class="about" id="historia">
+
+    <h2 class="title">
+      LA HISTORIA
+    </h2>
+
+    <p>
+      Mastellone nació como una idea para crear una marca
+      de ropa y calzado con un estilo moderno y diferente.
+      El águila representa fuerza, libertad y velocidad.
+      La idea es crear prendas que tengan personalidad
+      y que hagan que quien las use se sienta diferente.
+    </p>
+
+  </section>
+
+
+  <!-- CONTACTO -->
+
+  <section class="contact" id="contacto">
+
+    <h2 class="title">
+      CONTACTO
+    </h2>
+
+    <p>
+      ¿Quieres conocer más sobre Mastellone?
+    </p>
+
+    <div class="contact-info">
+
+      <p>
+        📧 Email: mastellone@example.com
+      </p>
+
+      <p>
+        📱 Instagram: @mastellone
+      </p>
+
+      <p>
+        🦅 Mastellone — Fuerza, libertad y estilo.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 MASTELLONE 🦅
+
+  </footer>
+
+
+  <!-- BIENVENIDA -->
+
+  <div id="welcome-screen">
+
+    <div class="welcome-box">
+
+      <div class="welcome-eagle">
+        🦅
+      </div>
+
+      <h2>
+        BIENVENIDO A MASTELLONE
+      </h2>
+
+      <p>
+        Tu primera visita comienza aquí.
+      </p>
+
+    </div>
+
   </div>
 
-  <nav>
-    <a href="#inicio">INICIO</a>
-    <a href="#coleccion">COLECCIÓN</a>
-    <a href="#historia">HISTORIA</a>
-    <a href="#contacto">CONTACTO</a>
-  </nav>
 
-  <div class="eagle">
-    🦅
-  </div>
+  <!-- JAVASCRIPT -->
 
-</header> 
+  <script>
 
-<section class="hero" id="inicio">
+    const yaEntro =
+      localStorage.getItem("mastellone_primera_visita");
 
-  <h1>MASTELLONE</h1>
 
-  <p>
-    Ropa y calzado creados para representar fuerza,
-    libertad y un estilo diferente.
-  </p>
+    if (!yaEntro) {
 
-  <a href="#coleccion" class="button">
-    VER COLECCIÓN
-  </a>
+      localStorage.setItem(
+        "mastellone_primera_visita",
+        "true"
+      );
 
-</section>
 
-<section id="coleccion">
+      for (let i = 0; i < 120; i++) {
 
-  <h2 class="title">
-    COLECCIÓN
-  </h2>
+        const confeti =
+          document.createElement("div");
 
-  <div class="products">
+        confeti.classList.add("confetti");
 
+        confeti.style.left =
+          Math.random() * 100 + "vw";
 
-<div class="product">
-<div class="product-image">
-  <img src="remera.jpg" alt="Mastellone Alpha">
-</div>
+        confeti.style.animationDuration =
+          (2 + Math.random() * 3) + "s";
 
-  <h3>
-    Mastellone Alpha
-  </h3>
+        confeti.style.animationDelay =
+          Math.random() * 2 + "s";
 
-  <p>
-    Remera urbana con un diseño moderno
-    inspirado en la identidad de Mastellone.
-  </p>
+        confeti.style.transform =
+          "rotate(" +
+          Math.random() * 360 +
+          "deg)";
 
-  <div class="price">
-    $35
-  </div>
+        document.body.appendChild(confeti);
 
-<button class="product-button" onclick="alert('Mastellone Alpha — Remera urbana — $35')">
-  VER PRODUCTO
-</button>
-</div>
 
+        setTimeout(() => {
 
-<div class="product">
+          confeti.remove();
 
-  <div class="product-image">
-    👟
-  </div>
+        }, 6000);
 
-  <h3>
-    Mastellone Eagle
-  </h3>
+      }
 
-  <p>
-    Zapatillas deportivas pensadas para
-    combinar comodidad y estilo.
-  </p>
+    } else {
 
-  <div class="price">
-    $80
-  </div>
-<button class="product-button" onclick="alert('Mastellone Eagle — Zapatillas deportivas — $80')">
-  VER PRODUCTO
-</button>
+      document
+        .getElementById("welcome-screen")
+        .remove();
 
-</div>
+    }
 
+  </script>
 
-<div class="product">
-
-  <div class="product-image">
-    🧥
-  </div>
-
-  <h3>
-    Mastellone Black
-  </h3>
-
-  <p>
-    Campera urbana de estilo minimalista
-    para completar cualquier outfit.
-  </p>
-
-  <div class="price">
-    $95
-  </div>
-
-  <button class="product-button" onclick="alert('Mastellone Black — Campera urbana — $95')">
-  VER PRODUCTO
-</button>
-
-</div>
-
-
-  </div>
-
-</section>
-
-<section class="about" id="historia">
-
-  <h2 class="title">
-    LA HISTORIA
-  </h2>
-
-  <p>
-    Mastellone nació como una idea para crear una marca
-    de ropa y calzado con un estilo moderno y diferente.
-    El águila representa fuerza, libertad y velocidad.
-    La idea es crear prendas que tengan personalidad
-    y que hagan que quien las use se sienta diferente.
-  </p>
-
-</section>
-<section class="contact" id="contacto">
-
-  <h2 class="title">
-    CONTACTO
-  </h2>
-
-  <p>
-    ¿Quieres conocer más sobre Mastellone?
-  </p>
-
-  <div class="contact-info">
-    <p>📧 Email: mastellone@example.com</p>
-    <p>📱 Instagram: @mastellone</p>
-    <p>🦅 Mastellone — Fuerza, libertad y estilo.</p>
-  </div>
-</section>
-
-<footer>
-
-  © 2026 MASTELLONE 🦅
-
-</footer>
-
-<!-- CELEBRACIÓN DE PRIMERA VISITA -->
-
-<div id="welcome-screen">
-
-  <div class="welcome-box">
-
-    <div class="welcome-eagle">🦅</div>
-
-    <h2>BIENVENIDO A MASTELLONE</h2>
-
-    <p>Tu primera visita comienza aquí.</p>
-
-  </div>
-
-</div>
-<style>
-#welcome-screen {
-  position: fixed;
-  inset: 0;
-  background: rgba(16, 20, 16, 0.96);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: welcomeOut 1s ease 3s forwards;
-}
-
-.welcome-box {
-  text-align: center;
-  animation: welcomeIn 0.8s ease;
-}
-
-.welcome-eagle {
-  font-size: 80px;
-  margin-bottom: 20px;
-}
-
-.welcome-box h2 {
-  font-size: 32px;
-  letter-spacing: 3px;
-}
-
-.welcome-box p {
-  margin-top: 12px;
-  color: #d5d5d5;
-}
-
-@keyframes welcomeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes welcomeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* CONFETI */
-
-.confetti {
-  position: fixed;
-  top: -20px;
-  width: 10px;
-  height: 18px;
-  z-index: 10000;
-  pointer-events: none;
-  animation: caer linear forwards;
-}
-
-@keyframes caer {
-  to {
-    transform: translateY(110vh) rotate(720deg);
-  }
-}
-</style>
-
-<script>
-const yaEntro = localStorage.getItem("mastellone_primera_visita");
-
-if (!yaEntro) {
-
-  localStorage.setItem("mastellone_primera_visita", "true");
-
-  for (let i = 0; i < 120; i++) {
-
-    const confeti = document.createElement("div");
-
-    confeti.classList.add("confetti");
-
-    confeti.style.left = Math.random() * 100 + "vw";
-
-    confeti.style.animationDuration =
-      (2 + Math.random() * 3) + "s";
-
-    confeti.style.animationDelay =
-      Math.random() * 2 + "s";
-
-    confeti.style.transform =
-      "rotate(" + Math.random() * 360 + "deg)";
-
-    document.body.appendChild(confeti);
-
-    setTimeout(() => {
-      confeti.remove();
-    }, 6000);
-  }
-
-} else {
-
-  document.getElementById("welcome-screen").remove();
-
-}
-</script>
 </body>
+
 </html>
 
 
