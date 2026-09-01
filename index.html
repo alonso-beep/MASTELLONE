@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mastellone</title>
+
+<title>Mastellone | Ropa y Calzado</title>
 
 <style>
 * {
@@ -12,11 +14,17 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f4ef;
   color: #111;
 }
+
+/* HEADER */
 
 header {
   background: #101410;
@@ -25,6 +33,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
@@ -35,21 +46,30 @@ header {
 
 .eagle {
   font-size: 35px;
+  transition: transform 0.3s ease;
 }
 
+.eagle:hover {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* HERO */
+
 .hero {
-  min-height: 70vh;
+  min-height: 75vh;
   background: #123d2a;
   color: white;
   padding: 80px 8%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-size: 80px;
   letter-spacing: 5px;
+  animation: aparecer 1s ease;
 }
 
 .hero p {
@@ -57,6 +77,7 @@ header {
   max-width: 600px;
   margin-top: 20px;
   line-height: 1.5;
+  animation: aparecer 1.3s ease;
 }
 
 .button {
@@ -69,16 +90,28 @@ header {
   text-decoration: none;
   font-weight: bold;
   border-radius: 8px;
+  transition: 0.3s ease;
+  animation: aparecer 1.5s ease;
 }
 
+.button:hover {
+  transform: translateY(-4px);
+  background: #e5e6e0;
+}
+
+/* SECCIONES */
+
 section {
-  padding: 70px 8%;
+  padding: 80px 8%;
 }
 
 .title {
   font-size: 40px;
   margin-bottom: 35px;
+  letter-spacing: 2px;
 }
+
+/* PRODUCTOS */
 
 .products {
   display: grid;
@@ -90,6 +123,12 @@ section {
   background: white;
   padding: 20px;
   border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .product-image {
@@ -99,17 +138,49 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 70px;
+  font-size: 80px;
+  transition: transform 0.3s ease;
+}
+
+.product:hover .product-image {
+  transform: scale(1.03);
 }
 
 .product h3 {
   margin-top: 18px;
+  font-size: 22px;
 }
 
 .product p {
   margin-top: 8px;
   color: #666;
 }
+
+.price {
+  margin-top: 15px;
+  font-size: 21px;
+  font-weight: bold;
+  color: #123d2a;
+}
+
+.product-button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 18px;
+  background: #101410;
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.product-button:hover {
+  background: #123d2a;
+  transform: translateY(-2px);
+}
+
+/* HISTORIA */
 
 .about {
   background: #101410;
@@ -122,6 +193,8 @@ section {
   line-height: 1.7;
 }
 
+/* FOOTER */
+
 footer {
   background: #123d2a;
   color: white;
@@ -129,26 +202,69 @@ footer {
   padding: 30px;
 }
 
+/* ANIMACIÓN */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CELULAR */
+
 @media (max-width: 800px) {
+
   .products {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 60px 8%;
   }
 
   .hero h1 {
     font-size: 50px;
   }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .product-image {
+    height: 250px;
+  }
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-  <div class="logo">MASTELLONE</div>
-  <div class="eagle">🦅</div>
+
+  <div class="logo">
+    MASTELLONE
+  </div>
+
+  <div class="eagle">
+    🦅
+  </div>
+
 </header>
 
 <section class="hero">
+
   <h1>MASTELLONE</h1>
 
   <p>
@@ -159,31 +275,95 @@ footer {
   <a href="#coleccion" class="button">
     VER COLECCIÓN
   </a>
+
 </section>
 
 <section id="coleccion">
 
-  <h2 class="title">COLECCIÓN</h2>
+  <h2 class="title">
+    COLECCIÓN
+  </h2>
 
   <div class="products">
 
-    <div class="product">
-      <div class="product-image">👕</div>
-      <h3>Mastellone Alpha</h3>
-      <p>Remera urbana</p>
-    </div>
+```
+<div class="product">
 
-    <div class="product">
-      <div class="product-image">👟</div>
-      <h3>Mastellone Eagle</h3>
-      <p>Zapatillas deportivas</p>
-    </div>
+  <div class="product-image">
+    👕
+  </div>
 
-    <div class="product">
-      <div class="product-image">🧥</div>
-      <h3>Mastellone Black</h3>
-      <p>Campera urbana</p>
-    </div>
+  <h3>
+    Mastellone Alpha
+  </h3>
+
+  <p>
+    Remera urbana con un diseño moderno
+    inspirado en la identidad de Mastellone.
+  </p>
+
+  <div class="price">
+    $35
+  </div>
+
+  <a href="#" class="product-button">
+    VER PRODUCTO
+  </a>
+
+</div>
+
+
+<div class="product">
+
+  <div class="product-image">
+    👟
+  </div>
+
+  <h3>
+    Mastellone Eagle
+  </h3>
+
+  <p>
+    Zapatillas deportivas pensadas para
+    combinar comodidad y estilo.
+  </p>
+
+  <div class="price">
+    $80
+  </div>
+
+  <a href="#" class="product-button">
+    VER PRODUCTO
+  </a>
+
+</div>
+
+
+<div class="product">
+
+  <div class="product-image">
+    🧥
+  </div>
+
+  <h3>
+    Mastellone Black
+  </h3>
+
+  <p>
+    Campera urbana de estilo minimalista
+    para completar cualquier outfit.
+  </p>
+
+  <div class="price">
+    $95
+  </div>
+
+  <a href="#" class="product-button">
+    VER PRODUCTO
+  </a>
+
+</div>
+```
 
   </div>
 
@@ -191,7 +371,9 @@ footer {
 
 <section class="about">
 
-  <h2 class="title">LA HISTORIA</h2>
+  <h2 class="title">
+    LA HISTORIA
+  </h2>
 
   <p>
     Mastellone nació como una idea para crear una marca
@@ -204,8 +386,11 @@ footer {
 </section>
 
 <footer>
-  © 2026 MASTELLONE 🦅
+
+© 2026 MASTELLONE 🦅
+
 </footer>
 
 </body>
 </html>
+
