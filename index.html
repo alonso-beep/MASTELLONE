@@ -43,8 +43,23 @@ header {
   font-weight: bold;
   letter-spacing: 4px;
 }
+nav {
+  display: flex;
+  gap: 25px;
+}
 
-.eagle {
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #b8d8c0;
+}.eagle {
   font-size: 35px;
   transition: transform 0.3s ease;
 }
@@ -257,13 +272,20 @@ footer {
     MASTELLONE
   </div>
 
+  <nav>
+    <a href="#inicio">INICIO</a>
+    <a href="#coleccion">COLECCIÓN</a>
+    <a href="#historia">HISTORIA</a>
+    <a href="#contacto">CONTACTO</a>
+  </nav>
+
   <div class="eagle">
     🦅
   </div>
 
-</header>
+</header> 
 
-<section class="hero">
+<section class="hero" id="inicio">
 
   <h1>MASTELLONE</h1>
 
@@ -286,12 +308,11 @@ footer {
 
   <div class="products">
 
-```
-<div class="product">
 
-  <div class="product-image">
-    👕
-  </div>
+<div class="product">
+<div class="product-image">
+  <img src="remera.jpg" alt="Mastellone Alpha">
+</div>
 
   <h3>
     Mastellone Alpha
@@ -306,10 +327,9 @@ footer {
     $35
   </div>
 
-  <a href="#" class="product-button">
-    VER PRODUCTO
-  </a>
-
+<button class="product-button" onclick="alert('Mastellone Alpha — Remera urbana — $35')">
+  VER PRODUCTO
+</button>
 </div>
 
 
@@ -331,10 +351,9 @@ footer {
   <div class="price">
     $80
   </div>
-
-  <a href="#" class="product-button">
-    VER PRODUCTO
-  </a>
+<button class="product-button" onclick="alert('Mastellone Eagle — Zapatillas deportivas — $80')">
+  VER PRODUCTO
+</button>
 
 </div>
 
@@ -358,18 +377,18 @@ footer {
     $95
   </div>
 
-  <a href="#" class="product-button">
-    VER PRODUCTO
-  </a>
+  <button class="product-button" onclick="alert('Mastellone Black — Campera urbana — $95')">
+  VER PRODUCTO
+</button>
 
 </div>
-```
+
 
   </div>
 
 </section>
 
-<section class="about">
+<section class="about" id="historia">
 
   <h2 class="title">
     LA HISTORIA
@@ -384,22 +403,44 @@ footer {
   </p>
 
 </section>
+<section class="contact" id="contacto">
+
+  <h2 class="title">
+    CONTACTO
+  </h2>
+
+  <p>
+    ¿Quieres conocer más sobre Mastellone?
+  </p>
+
+  <div class="contact-info">
+    <p>📧 Email: mastellone@example.com</p>
+    <p>📱 Instagram: @mastellone</p>
+    <p>🦅 Mastellone — Fuerza, libertad y estilo.</p>
+  </div>
+</section>
 
 <footer>
 
-© 2026 MASTELLONE 🦅
+  © 2026 MASTELLONE 🦅
 
 </footer>
+
 <!-- CELEBRACIÓN DE PRIMERA VISITA -->
 
 <div id="welcome-screen">
-  <div class="welcome-box">
-    <div class="welcome-eagle">🦅</div>
-    <h2>BIENVENIDO A MASTELLONE</h2>
-    <p>Tu primera visita comienza aquí.</p>
-  </div>
-</div>
 
+  <div class="welcome-box">
+
+    <div class="welcome-eagle">🦅</div>
+
+    <h2>BIENVENIDO A MASTELLONE</h2>
+
+    <p>Tu primera visita comienza aquí.</p>
+
+  </div>
+
+</div>
 <style>
 #welcome-screen {
   position: fixed;
